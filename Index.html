@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For my baby</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('background.jpeg');
+    background-size: cover; /* Ensure the background image covers the entire screen */
+    background-position: center;
+  }
+  .container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  h1 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  img {
+    width: 300px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: pulse 1s infinite alternate;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #333;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #333;
+    color: white;
+  }
+  
+  @keyframes pulse {
+    to {
+      transform: scale(1.1);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Princess Burland, Will you be my girlfriend?</h1>
+  <img src="us.jpeg" alt="Girl Image">
+  <div class="buttons">
+    <button id="yes-btn" onclick="heartAnimation()">Yes</button>
+    <button id="no-btn" onclick="showDialogue()">No</button>
+  </div>
+</div>
+
+<script>
+  function heartAnimation() {
+    var heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.fontSize = "30px";
+    heart.style.position = "absolute";
+    heart.style.top = "50%";
+    heart.style.left = "50%";
+    heart.style.transform = "translate(-50%, -50%)";
+    document.body.appendChild(heart);
+    setTimeout(function() {
+      heart.remove();
+      window.location.href = 'welcome.html';
+    }, 1000);
+  }
+
+  function showDialogue() {
+    alert("Sorry, Not an option");
+  }
+</script>
+
+</body>
+</html>
